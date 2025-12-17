@@ -15,6 +15,7 @@ while (err > thresh)
     h = p/(cos(lat)) - N;
     lat_prev = lat;
     data.position.elip.lat = atan((data.position.z./p)./(1-e^2.*(N./(N+h))));
+    data.position.elip.h = h;
     err(it) = max(data.position.elip.lat - lat_prev);
     it = it + 1;
 end
