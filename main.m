@@ -1,3 +1,6 @@
+clc; clear; close all;
+
+
 %% Projecte Mec Orbital
 
 % Data reading
@@ -6,3 +9,7 @@
 [data, err] = cart2elip(data);
 
 plot(err);
+
+orbit_vis(data);
+
+data = TRF2CRF(data);
