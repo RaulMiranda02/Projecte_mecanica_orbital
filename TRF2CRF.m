@@ -28,20 +28,19 @@ for i = 1:length(t.GMSTdeg)
     
     X = R3Z(t.GMSTrad(i))*[data.position.x(i), data.position.y(i), data.position.z(i)]';
     
-    data.position.eci.x(i) = X(1,:);
-    data.position.eci.y(i) = X(2,:);
-    data.position.eci.z(i) = X(3,:);
+    data.eci.position.x(i) = X(1,:);
+    data.eci.position.y(i) = X(2,:);
+    data.eci.position.z(i) = X(3,:);
     
-    r_eci = [data.position.eci.x(i), data.position.eci.y(i), data.position.eci.z(i)];
+    r_eci = [data.eci.position.x(i), data.eci.position.y(i), data.eci.position.z(i)];
     omega_dot = [0,0, 2*pi/86400];
 
     V = cross(omega_dot, r_eci)' + R3Z(t.GMSTrad(i))*[data.velocity.x(i), ...
                                       data.velocity.y(i), data.velocity.z(i)]';
     
-    data.velocity.eci.x(i) = V(1,:);
-    data.velocity.eci.y(i) = V(2,:);
-    data.velocity.eci.z(i) = V(3,:);
+    data.eci.velocity.x(i) = V(1,:);
+    data.eci.velocity.y(i) = V(2,:);
+    data.eci.velocity.z(i) = V(3,:);
 end
 
-%data.time=t;
 end

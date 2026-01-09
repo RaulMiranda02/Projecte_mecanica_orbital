@@ -13,3 +13,9 @@ plot(err);
 orbit_vis(data);
 
 data = TRF2CRF(data);
+
+[data.eci, err] = cart2elip(data.eci);
+
+orbit_vis(data);
+
+orbit_vis_compare_tracks_vel(data,11);
