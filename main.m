@@ -27,7 +27,8 @@ orbit_vis(data);
 orbit_vis_compare_tracks_vel(data,PRN);
 
 %Question 3
-data = stateVector2orbitalElements(data);
+data.eci.PRN = data.PRN;
+Orb_elems = stateVector2orbitalElements(data.eci);
 
 %Question 4
 results=RungeKutta(data,PRN,true);
