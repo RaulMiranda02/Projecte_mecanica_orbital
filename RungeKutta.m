@@ -10,13 +10,13 @@ end
 prn = data.PRN(:);
 I = (prn == prnTarget);
 
-X=data.position.x(I)*1000;
-Y=data.position.y(I)*1000;
-Z=data.position.z(I)*1000;
+X=data.eci.position.x(I)*1000;
+Y=data.eci.position.y(I)*1000;
+Z=data.eci.position.z(I)*1000;
 
-VX=data.velocity.x(I)*1000;
-VY=data.velocity.y(I)*1000;
-VZ=data.velocity.z(I)*1000;
+VX=data.eci.velocity.x(I)*1000;
+VY=data.eci.velocity.y(I)*1000;
+VZ=data.eci.velocity.z(I)*1000;
 
 AX=data.acceleration.x(I)*1000;
 AY=data.acceleration.y(I)*1000;

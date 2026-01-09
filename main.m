@@ -50,3 +50,9 @@ xlabel("UTC (s)")
 ylabel("Acceleration (m/s^2)")
 
 results_NP=RungeKutta(data,PRN,false);
+
+figure()
+plot(results_NP.acceleration.total)
+ylim([0.61,0.62])
+xlabel("UTC (s)")
+ylabel("Acceleration (m/s^2)")
