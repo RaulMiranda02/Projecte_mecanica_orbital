@@ -19,3 +19,5 @@ data = TRF2CRF(data);
 orbit_vis(data);
 
 orbit_vis_compare_tracks_vel(data,11);
+
+data = stateVector2orbitalElements(data);
