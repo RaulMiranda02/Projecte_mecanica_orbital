@@ -30,7 +30,7 @@ orbit_vis_compare_tracks_vel(data,PRN);
 data = stateVector2orbitalElements(data);
 
 %Question 4
-results=RungeKutta(data,PRN);
+results=RungeKutta(data,PRN,true);
 
 figure()
 hold on
@@ -48,3 +48,5 @@ plot(results.acceleration.total)
 ylim([0.61,0.62])
 xlabel("UTC (s)")
 ylabel("Acceleration (m/s^2)")
+
+results_NP=RungeKutta(data,PRN,false);
