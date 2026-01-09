@@ -50,6 +50,8 @@ ylim([0.61,0.62])
 xlabel("UTC (s)")
 ylabel("Acceleration (m/s^2)")
 
+results =  stateVector2orbitalElements_results(results);
+
 results_NP=RungeKutta(data,PRN,false);
 
 figure()
