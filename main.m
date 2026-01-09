@@ -53,6 +53,7 @@ ylabel("Acceleration (m/s^2)")
 results =  stateVector2orbitalElements_results(results);
 
 results_NP=RungeKutta(data,PRN,false);
+results_NP =  stateVector2orbitalElements_results(results_NP);
 
 figure()
 plot(results_NP.acceleration.total)

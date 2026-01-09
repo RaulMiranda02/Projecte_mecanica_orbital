@@ -111,6 +111,7 @@ for i=1:length(T)
             -(e.mu_E/r^2)*(y(3,ti)/r)-k*(3/2)*e.J2*(e.mu_E/r^2)*(e.R_E^2/r^2)^2*(1-5*(y(3,ti)/r)^2)*(y(3,ti)/r)+k*a_SM(3)];
 
         y1=y(:,ti)+(0.5*h)*f1;
+        r=sqrt(y1(1)^2+y1(2)^2+y1(3)^2);
 
         GMSTrad=ComputeGMST((ti+(0.5*h))/3600,YY(i),MM(i),DD(i));
         a_SM=R3Z(GMSTrad)*[AX(i),AY(i),AZ(i)]';
@@ -123,6 +124,7 @@ for i=1:length(T)
             -(e.mu_E/r^2)*(y1(3)/r)-k*(3/2)*e.J2*(e.mu_E/r^2)*(e.R_E^2/r^2)^2*(1-5*(y1(3)/r)^2)*(y1(3)/r)+k*a_SM(3)];
 
         y2=y(:,ti)+(0.5*h)*f2;
+        r=sqrt(y2(1)^2+y2(2)^2+y2(3)^2);
 
         f3= [y2(4);
             y2(5);
@@ -132,6 +134,7 @@ for i=1:length(T)
             -(e.mu_E/r^2)*(y2(3)/r)-k*(3/2)*e.J2*(e.mu_E/r^2)*(e.R_E^2/r^2)^2*(1-5*(y2(3)/r)^2)*(y2(3)/r)+k*a_SM(3)];
 
         y3=y(:,ti)+h*f3;
+        r=sqrt(y3(1)^2+y3(2)^2+y3(3)^2);
 
         GMSTrad=ComputeGMST((ti+h)/3600,YY(i),MM(i),DD(i));
         a_SM=R3Z(GMSTrad)*[AX(i),AY(i),AZ(i)]';
