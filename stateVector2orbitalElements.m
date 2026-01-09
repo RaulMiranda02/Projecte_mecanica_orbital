@@ -55,8 +55,7 @@ function dataOut =  stateVector2orbitalElements(data)
             h_vec = cross(r_vec, v_vec);    h = sqrt(dot(h_vec,h_vec));
         
             % Orbit excentricity
-            mu = 3.9860050e-14; % m^3/s^2, taken from World Geodetic System 1984 (WGS 84)
-            mu = mu/1e9;        % km^3/s^2
+            mu = 398600.4418; % km^3/s^2
         
             e_vec = (1/mu)*((v^2 - mu/r)*r_vec - r*vr*v_vec);
             e = sqrt(1 + (h^2 / mu^2)*(v^2 - 2*mu/r));
